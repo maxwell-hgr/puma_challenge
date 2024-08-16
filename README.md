@@ -3,9 +3,9 @@
 ## Link do desafio: https://github.com/jsfelix/puma-code-challenge
 
 ## Funcionalidades
-- Busca usuários do git
-- Adiciona usuários numa lista de favoritos
-- Marca uma star para apenas um usuário da lista
+- Buscar usuários do git
+- Adicionar usuários numa lista de favoritos
+- Marca uma estrela para apenas um usuário da lista
 - Apagar usuários
 - Redirecionar para o link da página do usuário no github 
 
