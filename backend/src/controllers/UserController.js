@@ -2,7 +2,6 @@ import User from "../models/UserModel";
 import reqUser from "../services/UserServices";
 
 export const registerUser = async (req, res) => {
-  // puxa user da url
   const { user } = req.params;
 
   try {
@@ -10,7 +9,6 @@ export const registerUser = async (req, res) => {
 
     if (already) return res.status(422).json({ error: "Usuário já existe!" });
 
-    // checa se já existem 5 usuários
     const users = await User.find();
     if (users.length >= 5) {
       return res.json({ error: "Limite de usuários atingido!" });
@@ -65,15 +63,13 @@ export const starUser = async (req, res) => {
       return res.status(422).json({ error: "Usuário já favoritado!" });
     user.star = true;
 
-    // se já houver um favorito, seta false para a star
-    const favorite = await User.findOne({ star: true }); // true or false
+    const favorite = await User.findOne({ star: true });
 
     if (favorite) {
       favorite.star = false;
       await User.findOneAndUpdate({ username: favorite.username }, favorite);
     }
 
-    // seta a star para o user selecionado
     await User.findOneAndUpdate({ username: user.username }, user);
     return res.json(user);
   } catch (error) {
