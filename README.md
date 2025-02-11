@@ -19,7 +19,6 @@ A aplicação conta com uma interface simples e responsiva, garantindo uma exper
 ### **Backend (API)**
 - **Node.js**
 - **Express**
-- **Axios** (para comunicação com a API do GitHub)
 - **Cors**
 - **Dotenv** (para configuração de variáveis de ambiente)
 - **Mongoose** (para configuração com o banco de dados)
